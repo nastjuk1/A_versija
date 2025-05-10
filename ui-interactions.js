@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", function () {
     closeFilter.addEventListener("click", () => filterPanel.classList.remove("active"));
   }
 
-  // Применение фильтров
+  // Filters
   const applyFiltersBtn = document.getElementById("apply-filters");
   const categorySelect = document.getElementById("category");
   const sortSelect = document.getElementById("sort");
@@ -20,7 +20,6 @@ document.addEventListener("DOMContentLoaded", function () {
   if (applyFiltersBtn && categorySelect && sortSelect && products && productGrid) {
     const loadingSpinner = document.createElement("div");
     loadingSpinner.className = "loading-spinner";
-    loadingSpinner.innerHTML = '<div class="spinner"></div><p>Notiek ielāde...</p>';
     loadingSpinner.style.display = "none";
     productGrid.parentElement.insertBefore(loadingSpinner, productGrid);
 
@@ -28,8 +27,6 @@ document.addEventListener("DOMContentLoaded", function () {
       const category = categorySelect.value;
       const sort = sortSelect.value;
 
-      loadingSpinner.style.display = "flex";
-      productGrid.style.opacity = "0.3";
 
       setTimeout(() => {
         const filtered = Array.from(products).filter(p => category === "all" || p.dataset.category === category);
@@ -48,7 +45,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  // Слайдер
+  // Slide
   const slides = document.querySelectorAll('.slide');
   const prevBtn = document.querySelector('.prev');
   const nextBtn = document.querySelector('.next');

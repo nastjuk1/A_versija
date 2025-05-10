@@ -1,3 +1,5 @@
+// Produkti
+
 const products = [
   {
     id: "ziedu-sapnis",
@@ -244,9 +246,6 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
-
-
-
 document.addEventListener("DOMContentLoaded", () => {
   const input = document.querySelector(".search-bar");
   const resultsContainer = document.getElementById("search-results");
@@ -286,7 +285,6 @@ document.addEventListener("DOMContentLoaded", () => {
     resultsContainer.classList.remove("hidden");
   });
 
-  // Переход по клику
   document.getElementById("search-results").addEventListener("click", (e) => {
     const item = e.target.closest(".search-result-item");
     if (!item) return;
@@ -297,7 +295,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // Скрывать, если клик вне
   document.addEventListener("click", (e) => {
     if (!e.target.closest(".search-container")) {
       resultsContainer.classList.add("hidden");
