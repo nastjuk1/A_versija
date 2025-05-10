@@ -11,38 +11,30 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   // Filters
-  const applyFiltersBtn = document.getElementById("apply-filters");
-const categorySelect = document.getElementById("category");
-const sortSelect = document.getElementById("sort");
-const productGrid = document.querySelector(".product-grid");
-const originalProducts = Array.from(document.querySelectorAll(".product")); // <-- сохраняем оригинальные элементы
+  
+  const originalProducts = Array.from(document.querySelectorAll(".product-grid > .product"));
 
 if (applyFiltersBtn && categorySelect && sortSelect && originalProducts.length && productGrid) {
-  const loadingSpinner = document.createElement("div");
-  productGrid.parentElement.insertBefore(loadingSpinner, productGrid);
-
   applyFiltersBtn.addEventListener("click", () => {
     const category = categorySelect.value;
     const sort = sortSelect.value;
 
-    setTimeout(() => {
-      // Работаем всегда с копией оригинального списка
-      let filtered = originalProducts.filter(p => category === "all" || p.dataset.category === category);
+    let filtered = originalProducts.filter(p => category === "all" || p.dataset.category === category);
 
-      if (sort === "low-high") {
-        filtered.sort((a, b) => parseFloat(a.dataset.price) - parseFloat(b.dataset.price));
-      } else if (sort === "high-low") {
-        filtered.sort((a, b) => parseFloat(b.dataset.price) - parseFloat(a.dataset.price));
-      }
+    if (sort === "low-high") {
+      filtered.sort((a, b) => parseFloat(a.dataset.price) - parseFloat(b.dataset.price));
+    } else if (sort === "high-low") {
+      filtered.sort((a, b) => parseFloat(b.dataset.price) - parseFloat(a.dataset.price));
+    }
 
-      productGrid.innerHTML = "";
-      filtered.forEach(p => productGrid.appendChild(p));
-      loadingSpinner.style.display = "none";
-      productGrid.style.opacity = "1";
-    }, 500);
+    productGrid.innerHTML = "";
+
+    filtered.forEach(p => {
+      const clone = p.cloneNode(true);
+      productGrid.appendChild(clone);
+    });
   });
 }
-
 
   // Slide
   const slides = document.querySelectorAll('.slide');
