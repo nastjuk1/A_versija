@@ -123,3 +123,16 @@ if (filteredProducts.length === 0) {
       setTimeout(() => resultsContainer.classList.add('hidden'), 300);
     }
   });
+
+document.addEventListener('click', function(event) {
+    var element = event.target;
+
+    var description = element.innerText || element.alt || element.title || element.id || 'unknown';
+
+    // Отправляем событие в Google Analytics
+    gtag('event', 'click', {
+      'event_category': 'User Interaction',
+      'event_label': description,
+      'value': 1
+    });
+});
