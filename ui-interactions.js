@@ -124,6 +124,8 @@ if (filteredProducts.length === 0) {
     }
   });
 
+// Metrikas
+
 document.addEventListener('click', function(event) {
     var element = event.target;
 
@@ -136,3 +138,10 @@ document.addEventListener('click', function(event) {
       'value': 1
     });
 });
+
+setTimeout(function() {
+  gtag('event', 'engaged_10s', {
+    'event_category': 'Timing',
+    'event_label': 'User stayed 10 seconds'
+  });
+}, 10000);
