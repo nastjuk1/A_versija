@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="lv">
+<head>
+  <meta charset="UTF-8">
+  <title>Veikaliņš</title>
+  <meta name="description" content="Описание страницы" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="style.css" />
+</head>
+<body>
+
+  <header>
+    <div class="header-container">
+      <a href="indexA.html"><div class="logo">Veikaliņš</div></a>
+      <div class="search-container">
+        <input type="text" class="search-bar" placeholder="Meklēšanas...">
+        <div id="search-results" class="search-results hidden"></div>
+      </div>
+
+      <div class="icons">
+        <div class="cart-container">
+          <div class="cart-icon">
+            <a href="indexcartA.html">
+              <img src="images/cart-large-minimalistic_svgrepo.com.svg" alt="Cart" />
+            </a>
+            <span class="cart-count hidden">0</span>
+          </div>
+          <div class="cart-dropdown">
+            <h4>Mani produkti</h4>
+            <ul class="cart-items"></ul>
+            <div class="cart-total">
+              <span><strong>Total: </strong>€<span id="total-price">0.00</span></span>
+            </div>
+            <button id="checkout-btn" class="checkout-btn">Uz grozu</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="slide" style="background-image: url('images/ChatGPT Image 2025. g. 29. apr. 18_01_27.svg');"></div>
+    <div class="slide" style="background-image: url('images/ChatGPT Image 2025. g. 29. apr. 18_48_15.png');"></div>
+    <div class="slide" style="background-image: url('images/ChatGPT Image 2025. g. 29. apr. 19_01_36.png');"></div>
+    <button class="arrow prev">&#10094;</button>
+    <button class="arrow next">&#10095;</button>
+    <a href="#products" class="shop-btn">Apskatīt produktus</a>
+  </section>
+
+  <section class="filter-static">
+    <label for="category">Kategorija:</label>
+    <select id="category">
+      <option value="all">Visi</option>
+      <option value="candle">Svece</option>
+      <option value="soap">Ziepes</option>
+      <option value="micellarwater">Micelārais ūdens</option>
+      <option value="lipbalm">Lūpu balzams</option>
+      <option value="cream">Krēms</option>
+    </select>
+
+    <label for="sort">Kārtot pēc:</label>
+    <select id="sort">
+      <option value="default">Populāri</option>
+      <option value="low-high">Cena: no zemākās</option>
+      <option value="high-low">Cena: no augstākās</option>
+    </select>
+
+    <button id="apply-filters">Pielietot</button>
+  </section>
+
+
+  <section class="products" id="products">
+    <div class="product-grid">
+      <!-- 1 produkts - Ziedu Sapnis -->
+      <div class="product" data-category="candle" data-price="14.90">
+        <div class="product-image-container">
+          <a href="indexproductA.html?id=ziedu-sapnis" class="product">
+            <div class="product-img-wrapper">
+              <img src="images/product1/ChatGPT_1.png" class="product-img front" alt="Ziedu Sapnis">
+              <img src="images/product1/ChatGPT Image 2025. g. 21. apr. 17_20_40.png" class="product-img back" alt="Ziedu Sapnis">
+            </div>
+          </a>
+          <div class="product-icons">
+            <div class="icon-wrapper" data-tooltip="Pievienot grozam">
+              <img src="images/cart-large-minimalistic_svgrepo.com.svg" alt="Add to cart" class="icon cart-icon" />
+            </div>
+          </div>
+        </div>
+        <div class="product-info">
+          <a href="indexproductA.html?id=ziedu-sapnis" class="product">
+            <div class="product-name">Ziedu Sapnis</div>
+          </a>
+          <div class="product-type">Aromātiskā svece</div>
+          <div class="product-price highlight">€14.90</div>
+        </div>
+      </div>
+      <!-- 2 produkts - Jūras Miers -->
+      <div class="product" data-category="soap" data-price="7.50">
+        <div class="product-image-container">
+          <a href="indexproductA.html?id=juras-miers" class="product">
+            <div class="product-img-wrapper">
+              <img src="images/product2/ChatGPT Image 2025. g. 21. apr. 17_25_41.png" class="product-img front" alt="Jūras Miers">
+              <img src="images/product2/ChatGPT Image 2025. g. 21. apr. 17_28_50.png" class="product-img back" alt="Jūras Miers">
+            </div>
+          </a>
+          <div class="product-icons">
+            <div class="icon-wrapper" data-tooltip="Pievienot grozam">
+              <img src="images/cart-large-minimalistic_svgrepo.com.svg" alt="Add to cart" class="icon cart-icon" />
+            </div>
+          </div>
+        </div>
+        <div class="product-info">
+          <a href="indexproductA.html?id=juras-miers" class="product">
+            <div class="product-name">Jūras Miers</div>
+          </a>
+          <div class="product-type">Ziepes</div>
+          <div class="product-price highlight">€7.50</div>
+        </div>
+      </div>
+      <!-- 3 produkts - Rīta Rasas -->
+      <div class="product" data-category="micellarwater" data-price="11.20">
+        <div class="product-image-container">
+          <a href="indexproductA.html?id=rita-rasas" class="product">
+            <div class="product-img-wrapper">
+              <img src="images/product3/ChatGPT Image 2025. g. 21. apr. 17_33_36.png" class="product-img front" alt="Rīta Rasas">
+              <img src="images/product3/ChatGPT Image 2025. g. 21. apr. 17_40_00.png" class="product-img back" alt="Rīta Rasas">
+            </div>
+          </a>
+          <div class="product-icons">
+            <div class="icon-wrapper" data-tooltip="Pievienot grozam">
+              <img src="images/cart-large-minimalistic_svgrepo.com.svg" alt="Add to cart" class="icon cart-icon" />
+            </div>
+          </div>
+        </div>
+        <div class="product-info">
+          <a href="indexproductA.html?id=rita-rasas" class="product">
+            <div class="product-name">Rīta Rasas</div>
+          </a>
+          <div class="product-type">Micelārais ūdens</div>
+          <div class="product-price highlight">€11.20</div>
+        </div>
+      </div>
+      <!-- 4 produkts - Siltais Skāviens -->
+      <div class="product" data-category="lipbalm" data-price="5.60">
+        <div class="product-image-container">
+          <a href="indexproductA.html?id=siltais-skaviens" class="product">
+            <div class="product-img-wrapper">
+              <img src="images/product4/ChatGPT Image 2025. g. 21. apr. 17_50_48.png" class="product-img front" alt="Siltais Skāviens">
+              <img src="images/product4/ChatGPT Image 2025. g. 21. apr. 18_07_04.png" class="product-img back" alt="Siltais Skāviens">
+            </div>
+          </a>
+          <div class="product-icons">
+            <div class="icon-wrapper" data-tooltip="Pievienot grozam">
+              <img src="images/cart-large-minimalistic_svgrepo.com.svg" alt="Add to cart" class="icon cart-icon" />
+            </div>
+          </div>
+        </div>
+        <div class="product-info">
+          <a href="indexproductA.html?id=siltais-skaviens" class="product">
+            <div class="product-name">Siltais Skāviens</div>
+          </a>
+          <div class="product-type">Lūpu balzams</div>
+          <div class="product-price highlight">€5.60</div>
+        </div>
+      </div>
+      <!-- 5 produkts - Samtu Dārzs -->
+      <div class="product" data-category="cream" data-price="7.80">
+        <div class="product-image-container">
+          <a href="indexproductA.html?id=samtu-darzs" class="product">
+            <div class="product-img-wrapper">
+              <img src="images/product5/ChatGPT Image 2025. g. 21. apr. 18_13_32.png" class="product-img front" alt="Samtu Dārzs">
+              <img src="images/product5/ChatGPT Image 2025. g. 21. apr. 18_17_00.png" class="product-img back" alt="Samtu Dārzs">
+            </div>
+          </a>
+          <div class="product-icons">
+            <div class="icon-wrapper" data-tooltip="Pievienot grozam">
+              <img src="images/cart-large-minimalistic_svgrepo.com.svg" alt="Add to cart" class="icon cart-icon" />
+            </div>
+          </div>
+        </div>
+        <div class="product-info">
+          <a href="indexproductA.html?id=samtu-darzs" class="product">
+            <div class="product-name">Samtu Dārzs</div>
+          </a>
+          <div class="product-type">Sejas krēms</div>
+          <div class="product-price highlight">€7.80</div>
+        </div>
+      </div>
+      <!-- 6 produkts - Miera Vilnis -->
+      <div class="product" data-category="candle" data-price="9.40">
+        <div class="product-image-container">
+          <a href="indexproductA.html?id=miera-vilnis" class="product">
+            <div class="product-img-wrapper">
+              <img src="images/product6/ChatGPT Image 2025. g. 21. apr. 18_52_12.png" class="product-img front" alt="Miera Vilnis">
+              <img src="images/product6/ChatGPT Image 2025. g. 21. apr. 18_53_51.png" class="product-img back" alt="Miera Vilnis">
+            </div>
+          </a>
+          <div class="product-icons">
+            <div class="icon-wrapper" data-tooltip="Pievienot grozam">
+              <img src="images/cart-large-minimalistic_svgrepo.com.svg" alt="Add to cart" class="icon cart-icon" />
+            </div>
+          </div>
+        </div>
+        <div class="product-info">
+          <a href="indexproductA.html?id=miera-vilnis" class="product">
+            <div class="product-name">Miera Vilnis</div>
+          </a>
+          <div class="product-type">Aromātiskā svece</div>
+          <div class="product-price highlight">€9.40</div>
+        </div>
+      </div>
+      <!-- 7 produkts - Saules Glāsts -->
+      <div class="product" data-category="soap" data-price="4.80">
+        <div class="product-image-container">
+          <a href="indexproductA.html?id=saules-glasts" class="product">
+            <div class="product-img-wrapper">
+              <img src="images/product7/ChatGPT Image 2025. g. 21. apr. 20_15_59.png" class="product-img front" alt="Saules Glāsts">
+              <img src="images/product7/ChatGPT Image 2025. g. 21. apr. 20_17_10.png" class="product-img back" alt="Saules Glāsts">
+            </div>
+          </a>
+          <div class="product-icons">
+            <div class="icon-wrapper" data-tooltip="Pievienot grozam">
+              <img src="images/cart-large-minimalistic_svgrepo.com.svg" alt="Add to cart" class="icon cart-icon" />
+            </div>
+          </div>
+        </div>
+        <div class="product-info">
+          <a href="indexproductA.html?id=saules-glasts" class="product">
+            <div class="product-name">Saules Glāsts</div>
+          </a>
+          <div class="product-type">Ziepes</div>
+          <div class="product-price highlight">€4.80</div>
+        </div>
+      </div>
+      <!-- 8 produkts - Tīruma Rasa -->
+      <div class="product" data-category="micellarwater" data-price="6.90">
+        <div class="product-image-container">
+          <a href="indexproductA.html?id=tiruma-rasa" class="product">
+            <div class="product-img-wrapper">
+              <img src="images/product8/ChatGPT Image 2025. g. 21. apr. 20_22_27.png" class="product-img front" alt="Tīruma Rasa">
+              <img src="images/product8/ChatGPT Image 2025. g. 21. apr. 20_24_07.png" class="product-img back" alt="Tīruma Rasa">
+            </div>
+          </a>
+          <div class="product-icons">
+            <div class="icon-wrapper" data-tooltip="Pievienot grozam">
+              <img src="images/cart-large-minimalistic_svgrepo.com.svg" alt="Add to cart" class="icon cart-icon" />
+            </div>
+          </div>
+        </div>
+        <div class="product-info">
+          <a href="indexproductA.html?id=tiruma-rasa" class="product">
+            <div class="product-name">Tīruma Rasa</div>
+          </a>
+          <div class="product-type">Micelārais ūdens</div>
+          <div class="product-price highlight">€6.90</div>
+        </div>
+      </div>
+      <!-- 9 produkts - Ogu Skūpsts -->
+      <div class="product" data-category="lipbalm" data-price="5.40">
+        <div class="product-image-container">
+          <a href="indexproductA.html?id=ogu-skupsts" class="product">
+            <div class="product-img-wrapper">
+              <img src="images/product9/ChatGPT Image 2025. g. 21. apr. 20_38_56.png" class="product-img front" alt="Ogu Skūpsts">
+              <img src="images/product9/ChatGPT Image 2025. g. 21. apr. 20_41_35.png" class="product-img back" alt="Ogu Skūpsts">
+            </div>
+          </a>
+          <div class="product-icons">
+            <div class="icon-wrapper" data-tooltip="Pievienot grozam">
+              <img src="images/cart-large-minimalistic_svgrepo.com.svg" alt="Add to cart" class="icon cart-icon" />
+            </div>
+          </div>
+        </div>
+        <div class="product-info">
+          <a href="indexproductA.html?id=ogu-skupsts" class="product">
+            <div class="product-name">Ogu Skūpsts</div>
+          </a>
+          <div class="product-type">Lūpu balzams</div>
+          <div class="product-price highlight">€5.40</div>
+        </div>
+      </div>
+      <!-- 10 produkts - Rīta Saule -->
+      <div class="product" data-category="cream" data-price="6.50">
+        <div class="product-image-container">
+          <a href="indexproductA.html?id=rita-saule" class="product">
+            <div class="product-img-wrapper">
+              <img src="images/product10/ChatGPT Image 2025. g. 21. apr. 20_45_22.png" class="product-img front" alt="Rīta Saule">
+              <img src="images/product10/ChatGPT Image 2025. g. 21. apr. 20_52_09.png" class="product-img back" alt="Rīta Saule">
+            </div>
+          </a>
+          <div class="product-icons">
+            <div class="icon-wrapper" data-tooltip="Pievienot grozam">
+              <img src="images/cart-large-minimalistic_svgrepo.com.svg" alt="Add to cart" class="icon cart-icon" />
+            </div>
+          </div>
+        </div>
+        <div class="product-info">
+          <a href="indexproductA.html?id=rita-saule" class="product">
+            <div class="product-name">Rīta Saule</div>
+          </a>
+          <div class="product-type">Sejas krēms</div>
+          <div class="product-price highlight">€6.50</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="logofooter">
+      <a href="indexA.html"><div class="logo">Veikaliņš</div></a>
+    </div>
+  </footer>
+
+  <div class="c">ANASTASIJA IĻJUČONOKA 2025</div>
+
+  <script src="ui-interactions.js"></script>
+  <script src="cart.js"></script>
+  <script src="product-details.js"></script>
+  <script src="products-data.js"></script>
+  
+</body>
+</html>
