@@ -19,8 +19,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
   if (applyFiltersBtn && categorySelect && sortSelect && products && productGrid) {
     const loadingSpinner = document.createElement("div");
-    loadingSpinner.className = "loading-spinner";
-    loadingSpinner.style.display = "none";
     productGrid.parentElement.insertBefore(loadingSpinner, productGrid);
 
     applyFiltersBtn.addEventListener("click", () => {
