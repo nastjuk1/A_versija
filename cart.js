@@ -95,9 +95,6 @@ function removeItem(productName) {
   location.reload();
 }
 
-// ---------------------------
-// ДОБАВЛЕНИЕ ТОВАРА
-// ---------------------------
 
 function addToCartFromElement(productElement) {
   const productImage = productElement.querySelector('.product-img');
@@ -108,10 +105,6 @@ function addToCartFromElement(productElement) {
 
   addToCart({ name: productName, type: productType, price: productPrice, img: productImageSrc });
 }
-
-// ---------------------------
-// ОБРАБОТКА КНОПОК
-// ---------------------------
 
 document.addEventListener("DOMContentLoaded", () => {
   updateCartDisplay();
@@ -163,82 +156,79 @@ function renderCartPageItems() {
   if (summaryTotal) summaryTotal.textContent = '€' + (total + 2.50).toFixed(2);
 }
 
-// ---------------------------
-// ЧЕКАУТ
-// ---------------------------
+// Checkout
 
 document.addEventListener('DOMContentLoaded', () => {
   const checkoutForm = document.getElementById('checkoutForm');
   const loading = document.getElementById('loading');
   const thankYou = document.getElementById('thankYou');
 
-  checkoutForm.addEventListener('submit', (e) => {
-    e.preventDefault();
+  if (checkoutForm) { 
+    checkoutForm.addEventListener('submit', (e) => {
+      e.preventDefault();
 
-    if (!validateForm()) {
-      return;
-    }
+      if (!validateForm()) {
+        return;
+      }
 
-    checkoutForm.classList.add('hidden');
-    loading.classList.remove('hidden');
+      checkoutForm.classList.add('hidden');
+      loading?.classList.remove('hidden');
 
-    setTimeout(() => {
-      loading.classList.add('hidden');
-      thankYou.classList.remove('hidden');
+      setTimeout(() => {
+        loading?.classList.add('hidden');
+        thankYou?.classList.remove('hidden');
 
-      // Очистить корзину
-      localStorage.removeItem('cart');
-      const cartCountEl = document.querySelector('.cart-count');
-      if (cartCountEl) cartCountEl.textContent = '0';
-    }, 2000);
-  });
+        localStorage.removeItem('cart');
+        const cartCountEl = document.querySelector('.cart-count');
+        if (cartCountEl) cartCountEl.textContent = '0';
+      }, 2000);
+    });
+  }
 
   function validateForm() {
     let valid = true;
 
-    // Validate Name
     const nameInput = document.getElementById('userName');
     const errorName = document.getElementById('errorName');
-    const name = nameInput.value.trim();
+    const name = nameInput?.value.trim();
     const nameRegex = /^[A-Z][a-zA-Z]{2,}$/;
     if (!nameRegex.test(name)) {
-      errorName.textContent = 'Vārdam jāsākas ar lielo burtu, tikai latīņu burti un vismaz 3 burti.';
-      nameInput.classList.add('invalid');
+      if (errorName) errorName.textContent = 'Vārdam jāsākas ar lielo burtu, tikai latīņu burti un vismaz 3 burti.';
+      nameInput?.classList.add('invalid');
       valid = false;
     } else {
-      errorName.textContent = '';
-      nameInput.classList.remove('invalid');
+      if (errorName) errorName.textContent = '';
+      nameInput?.classList.remove('invalid');
     }
 
-    // Validate Email
     const emailInput = document.getElementById('userEmail');
     const errorEmail = document.getElementById('errorEmail');
-    const email = emailInput.value.trim();
+    const email = emailInput?.value.trim();
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(email)) {
-      errorEmail.textContent = 'Lūdzu ievadi derīgu e-pastu.';
-      emailInput.classList.add('invalid');
+      if (errorEmail) errorEmail.textContent = 'Lūdzu ievadi derīgu e-pastu.';
+      emailInput?.classList.add('invalid');
       valid = false;
     } else {
-      errorEmail.textContent = '';
-      emailInput.classList.remove('invalid');
+      if (errorEmail) errorEmail.textContent = '';
+      emailInput?.classList.remove('invalid');
     }
 
-    // Validate Address
     const addrInput = document.getElementById('userAddress');
     const errorAddr = document.getElementById('errorAddress');
-    const addr = addrInput.value.trim();
+    const addr = addrInput?.value.trim();
     if (addr.length < 5) {
-      errorAddr.textContent = 'Adresei jābūt vismaz 5 rakstzīmēm.';
-      addrInput.classList.add('invalid');
+      if (errorAddr) errorAddr.textContent = 'Adresei jābūt vismaz 5 rakstzīmēm.';
+      addrInput?.classList.add('invalid');
       valid = false;
     } else {
-      errorAddr.textContent = '';
-      addrInput.classList.remove('invalid');
+      if (errorAddr) errorAddr.textContent = '';
+      addrInput?.classList.remove('invalid');
     }
 
     return valid;
   }
 });
+
 
 

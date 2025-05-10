@@ -833,10 +833,6 @@ footer {
   border: 2px solid transparent;
 }
 
-.thumbnail.active-thumb {
-  border: 2px solid #4CE0A2;
-}
-
 .nav-arrow {
   position: absolute;
   top: 50%;
@@ -1216,12 +1212,6 @@ html {
 .filter-content select {
   background-color: inherit;
   border: 1px solid #ccc;
-}
-
-
-.checkout-process {
-}
-.checkout-process.show {
 }
 
 .filter-static {
