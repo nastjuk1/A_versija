@@ -176,6 +176,12 @@ document.addEventListener('DOMContentLoaded', () => {
     checkoutForm.addEventListener('submit', (e) => {
       e.preventDefault();
 
+      const cart = getCart();
+      if (cart.length === 0) {
+        alert('Jūsu grozs ir tukšs. Lūdzu, pievienojiet preces pirms pasūtījuma noformēšanas.');
+        return;
+      }
+      
       if (!validateForm()) {
         return;
       }
