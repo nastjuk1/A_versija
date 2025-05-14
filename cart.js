@@ -229,27 +229,3 @@ document.addEventListener('DOMContentLoaded', () => {
     return valid;
   }
 });
-
-document.addEventListener('DOMContentLoaded', () => {
-  const checkoutForm = document.getElementById('checkoutForm');
-  const submitButton = checkoutForm.querySelector('.checkout-btn');
-  const nameInput = document.getElementById('userName');
-  const emailInput = document.getElementById('userEmail');
-  const addressInput = document.getElementById('userAddress');
-
-  function checkFormFilled() {
-    const isNameFilled = nameInput.value.trim() !== '';
-    const isEmailFilled = emailInput.value.trim() !== '';
-    const isAddressFilled = addressInput.value.trim() !== '';
-
-    submitButton.disabled = !(isNameFilled && isEmailFilled && isAddressFilled);
-  }
-
-  nameInput.addEventListener('input', checkFormFilled);
-  emailInput.addEventListener('input', checkFormFilled);
-  addressInput.addEventListener('input', checkFormFilled);
-
-  checkFormFilled(); 
-});
-
-
