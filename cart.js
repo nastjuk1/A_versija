@@ -3,6 +3,14 @@ function getCart() {
   return cart ? JSON.parse(cart) : [];
 }
 
+function updateCheckoutButtonState() {
+  const checkoutButton = document.querySelector('.checkout-btn');
+  if (!checkoutButton) return;
+
+  const cart = getCart();
+  checkoutButton.disabled = cart.length === 0;
+}
+
 function saveCart(cart) {
   localStorage.setItem('cart', JSON.stringify(cart));
 }
@@ -68,6 +76,7 @@ function updateCartDisplay() {
       cartItemsList.appendChild(emptyMessage);
     }
   }
+  updateCheckoutButtonState();
 }
 
 function changeQuantity(productName, amount) {

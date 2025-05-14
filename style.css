@@ -118,6 +118,11 @@ footer {
   z-index: 0;
 }
 
+.checkout-btn:disabled {
+  pointer-events: none;
+  opacity: 1;
+}
+
 
 .slide.active {
   opacity: 1;
