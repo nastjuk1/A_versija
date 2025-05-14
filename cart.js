@@ -157,7 +157,6 @@ function renderCartPageItems() {
 }
 
 // Checkout
-
 document.addEventListener('DOMContentLoaded', () => {
   const checkoutForm = document.getElementById('checkoutForm');
   const loading = document.getElementById('loading');
