@@ -25,16 +25,14 @@ function updateCartDisplay() {
   const cartCountEl = document.querySelector('.cart-count');
   const cartItemsList = document.querySelector('.cart-items');
   const totalPriceEl = document.getElementById('total-price');
-  const checkoutButton = document.querySelector('.checkout-btn'); 
+  
 
   if (cartCountEl) {
     const totalCount = cart.reduce((sum, item) => sum + item.quantity, 0);
     cartCountEl.textContent = totalCount;
     cartCountEl.classList.toggle("hidden", totalCount === 0);
   }
-  if (checkoutButton) {
-    checkoutButton.disabled = cart.length === 0; 
-  }
+
   if (cartItemsList) {
     cartItemsList.innerHTML = '';
     let total = 0;
